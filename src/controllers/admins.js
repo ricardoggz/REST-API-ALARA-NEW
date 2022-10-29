@@ -58,4 +58,17 @@ const deleteAdmin= (req, res)=> database.config.query(
 
 )
 
-export { getAdmins, postAdmin, putAdmin, deleteAdmin }
+const adminLogin=(req, res)=> database.config.query(
+    `SELECT
+     ADMIN_USUARIO,
+     ADMIN_CONTRASENA
+     FROM admins
+     WHERE
+     ADMIN_USUARIO = "${req.body.ADMIN_USUARIO}"
+     AND
+     ADMIN_CONTRASENA = "${req.body.ADMIN_CONTRASENA}"
+    `,
+    (err, data)=> !err ? res.json({data}) : res.json({err})
+)
+
+export { getAdmins, postAdmin, putAdmin, deleteAdmin, adminLogin }
