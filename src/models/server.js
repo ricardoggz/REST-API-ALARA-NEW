@@ -2,6 +2,7 @@ import cors from "cors"
 import express, { Router } from "express"
 import { database } from "../database/database.js"
 import { adminRouter } from "../routes/admins.js"
+import { userRouter } from "../routes/users.js"
 
 class Server{
     constructor(){
@@ -21,7 +22,7 @@ class Server{
         return database.connection()
     }
     routes(){
-        this.app.use('/', adminRouter)
+        this.app.use('/', adminRouter, userRouter)
     }
 }
 export const server = new Server()
