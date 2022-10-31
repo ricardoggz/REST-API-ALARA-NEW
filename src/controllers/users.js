@@ -48,7 +48,7 @@ const putUser= (req, res)=> database.config.query(
 const deleteUser= (req, res)=> database.config.query(
     `DELETE FROM pseudosocios
      WHERE
-     PSEUDO_CONTRASENA = "${req.body.PSEUDO_CONTRASENA}"
+     PSEUDO_USUARIO = "${req.body.PSEUDO_USUARIO}"
     `,
     (err)=> !err ? res.json({
                 ok: true,
