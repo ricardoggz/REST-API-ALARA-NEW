@@ -1,7 +1,7 @@
 export const config ={
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password:'',
-    database:'alara-database'
+    host: 'mysql-prueba-alara.alwaysdata.net',
+    //port: 3306,
+    user: '283679_free',
+    password:'root_123',
+    database:'prueba-alara_new-database'
 }

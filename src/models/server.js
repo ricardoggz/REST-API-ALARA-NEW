@@ -1,8 +1,11 @@
 import cors from "cors"
 import express, { Router } from "express"
+import dotenv from "dotenv"
 import { database } from "../database/database.js"
 import { adminRouter } from "../routes/admins.js"
 import { userRouter } from "../routes/users.js"
+
+dotenv.config()
 
 class Server{
     constructor(){
@@ -14,7 +17,7 @@ class Server{
         this.app.use(express.json())
     }
     listen(){
-        return this.app.listen(8080,()=>{
+        return this.app.listen(process.env.PORT || 8080,()=>{
             return console.log('SERVER RUNNING')
         })
     }
