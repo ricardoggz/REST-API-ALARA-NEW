@@ -4,7 +4,7 @@ import dotenv from "dotenv"
 import { database } from "../database/database.js"
 import { adminRouter } from "../routes/admins.js"
 import { userRouter } from "../routes/users.js"
-//import { companyRouter } from "../routes/companies.js"
+import { companyRouter } from "../routes/companies.js"
 
 dotenv.config()
 
@@ -26,7 +26,7 @@ class Server{
         return database.connection()
     }
     routes(){
-        this.app.use('/', adminRouter, userRouter )
+        this.app.use('/', adminRouter, userRouter, companyRouter )
     }
 }
 export const server = new Server()
