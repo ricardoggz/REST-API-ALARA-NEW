@@ -1,10 +1,11 @@
 import cors from "cors"
-import express, { Router } from "express"
+import express from "express"
 import dotenv from "dotenv"
 import { database } from "../database/database.js"
 import { adminRouter } from "../routes/admins.js"
 import { userRouter } from "../routes/users.js"
 import { companyRouter } from "../routes/companies.js"
+import { detectorRouter } from "../routes/detectors.js"
 
 dotenv.config()
 
@@ -26,7 +27,7 @@ class Server{
         return database.connection()
     }
     routes(){
-        this.app.use('/', adminRouter, userRouter, companyRouter )
+        this.app.use('/', adminRouter, userRouter, companyRouter, detectorRouter )
     }
 }
 export const server = new Server()
