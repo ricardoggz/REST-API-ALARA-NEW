@@ -17,7 +17,7 @@ const getDetectors=(req, res)=>database.config.query(
      INNER JOIN pseudosocios ON pseudosocios.PSEUDO_ID = detectores.PSEUDO_ID
      INNER JOIN razonsocial ON razonsocial.RAZON_ID = detectores.RAZON_ID
      `,
-    (err, admins)=> !err ? res.json({admins}) : res.json({err})
+    (err, detectors)=> !err ? res.json({detectors}) : res.json({err})
 )
 
 const postDetector=(req, res)=>database.config.query(
