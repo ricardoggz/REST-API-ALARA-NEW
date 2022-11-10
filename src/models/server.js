@@ -1,7 +1,7 @@
 import cors from "cors"
 import express from "express"
 import dotenv from "dotenv"
-import { database } from "../database/database.js"
+//import { database } from "../database/database.js"
 import { adminRouter } from "../routes/admins.js"
 import { userRouter } from "../routes/users.js"
 import { companyRouter } from "../routes/companies.js"
@@ -23,9 +23,9 @@ class Server{
             return console.log('SERVER RUNNING')
         })
     }
-    dbConnect(){
+    /*dbConnect(){
         return database.connection()
-    }
+    }*/
     routes(){
         this.app.use('/', adminRouter, userRouter, companyRouter, detectorRouter )
     }

@@ -3,7 +3,7 @@ import { server } from "./models/server.js"
 //middlewares
 server.middlewares()
 //Database connection
-server.dbConnect()
+//server.dbConnect()
 //routes
 server.routes()
 //listen PORT
