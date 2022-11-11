@@ -9,6 +9,8 @@ const getDetectors=(req, res)=>database.config.query(
      DETECTOR_MODELO AS MODELO,
      detectores.PSEUDO_ID AS PSEUDO_ID,
      pseudosocios.PSEUDO_NOMBRE AS PSEUDOSOCIO,
+     pseudosocios.PSEUDO_USUARIO,
+     pseudosocios.PSEUDO_CONTRASENA,
      detectores.RAZON_ID AS RAZON_ID,
      razonsocial.RAZON_NOMBRE AS RAZON_SOCIAL,
      detectores.DETECTOR_ULT_SERVICIO AS ULT_SERVICIO,
