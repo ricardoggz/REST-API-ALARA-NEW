@@ -7,7 +7,8 @@ const getAdmins =(req, res)=>{
             `SELECT
              ADMIN_ID AS ID,
              ADMIN_NOMBRE AS NOMBRE,
-             ADMIN_USUARIO AS USUARIO
+             ADMIN_USUARIO AS USUARIO,
+             ADMIN_CONTRASENA AS CONTRASENA
              FROM admins
             `,
             (err, admins)=>{
